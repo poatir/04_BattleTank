@@ -4,9 +4,8 @@
 #include "TankPlayerController.h"
 
 
-ATank* ATankPlayerController::GetControlledTank() const
+ATank* ATankPlayerController::GetControllerTank() const
 {
-
 	return Cast<ATank>(GetPawn());
 }
 
