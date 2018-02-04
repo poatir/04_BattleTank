@@ -21,5 +21,17 @@ void ATankPlayerController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
 	}
 }
-
+void ATankPlayerController::Tick(float DeltaTime) 
+{
+	Super::Tick(DeltaTime);
+	AimTowardCrosshair();
+	UE_LOG(LogTemp, Warning, TEXT("Player Controller Tick"));
+}
+void ATankPlayerController::AimTowardCrosshair()
+{
+	if (!GetControlledTank())
+	{
+		return;
+	}
+}
 
