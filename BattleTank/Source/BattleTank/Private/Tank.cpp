@@ -20,9 +20,9 @@ void ATank::BeginPlay()
 }
 
 // Called every frame
-void ATank::Tick( float DeltaTime )
+void ATank::Tick( float DeltaSeconds )
 {
-	Super::Tick( DeltaTime );
+	Super::Tick( DeltaSeconds );
 
 }
 
@@ -31,5 +31,11 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+}
+
+void ATank::AimAt(FVector HitLocation)
+{
+	auto OurTankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s aimingAt: %s"),*OurTankName,*HitLocation.ToString());
 }
 
