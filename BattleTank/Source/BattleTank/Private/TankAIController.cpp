@@ -10,11 +10,11 @@ void ATankAIController::BeginPlay()
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Tanque AI no poseido"));
+		//UE_LOG(LogTemp, Warning, TEXT("Tanque AI no poseido"));
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Tanque AI poseido: %s"), *ControlledTank->GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("Tanque AI poseido: %s"), *ControlledTank->GetName());
 	}
 }
 void ATankAIController::Tick(float DeltaSeconds)

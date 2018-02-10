@@ -14,18 +14,18 @@ void ATankPlayerController::BeginPlay()
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Tanque no poseido"));
+		//UE_LOG(LogTemp, Warning, TEXT("Tanque no poseido"));
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
 	}
 }
 void ATankPlayerController::Tick(float DeltaTime) 
 {
 	Super::Tick(DeltaTime);
 	AimTowardCrosshair();
-	UE_LOG(LogTemp, Warning, TEXT("Player Controller Tick"));
+	//UE_LOG(LogTemp, Warning, TEXT("Player Controller Tick"));
 }
 void ATankPlayerController::AimTowardCrosshair()
 {
@@ -47,11 +47,11 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 	//Posición de la mira basada en el tamaño del viewport
 	auto ScreenLocation = FVector2D(ViewportSizeX*CrosshairXlocation, ViewportSizeY*CrosshairYlocation);
-	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
+	//UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
 	FVector LookDirection;
 	if (GetLookDirection(ScreenLocation,LookDirection))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *LookDirection.ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *LookDirection.ToString());
 		GetLookVectorHitLocation(LookDirection, HitLocation);
 	}
 	return true;
