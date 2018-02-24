@@ -48,8 +48,8 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	FCollisionResponseParams ResponseParam;
 	TArray<AActor*> ActorIgnoreList;
 	ActorIgnoreList.Add(GetOwner());
-	ActorIgnoreList.Add(GetWorld()->GetFirstPlayerController()->GetPawn());
-	bool bHaveAimSolution = UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, HitLocation, LaunchSpeed, false, 0, 0, ESuggestProjVelocityTraceOption::TraceFullPath, FCollisionResponseParams::DefaultResponseParam , ActorIgnoreList, true);
+	//ActorIgnoreList.Add(GetWorld()->GetFirstPlayerController()->GetPawn());
+	bool bHaveAimSolution = UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, HitLocation, LaunchSpeed, false, 0, 0, ESuggestProjVelocityTraceOption::DoNotTrace, FCollisionResponseParams::DefaultResponseParam , ActorIgnoreList);
 	if (bHaveAimSolution)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
