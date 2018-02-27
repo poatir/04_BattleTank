@@ -57,14 +57,14 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		auto TankName = GetOwner()->GetName();
 		//UE_LOG(LogTemp, Warning, TEXT("Name: %s aiming At: %s"), *TankName, *AimDirection.ToString());
 		MoveBarrelTowards(AimDirection);
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("Tiempo: %f Aim solve found -"), Time);
+		//auto Time = GetWorld()->GetTimeSeconds();
+		//UE_LOG(LogTemp, Warning, TEXT("Tiempo: %f Aim solve found -"), Time);
 	}
 	else
 	{
 		//No hay solución para la trayectoria con esa velocidad.
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("Tiempo: %f No Aim solve found -"),Time);
+		//auto Time = GetWorld()->GetTimeSeconds();
+		//UE_LOG(LogTemp, Warning, TEXT("Tiempo: %f No Aim solve found -"),Time);
 	}
 }
 //void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)

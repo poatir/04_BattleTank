@@ -16,11 +16,14 @@ public:
 
 	UFUNCTION (BlueprintCallable, Category = Setup)
 	//void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
-		void SetBarrelReference(UTankBarrel* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-		//void SetTurretReference(UStaticMeshComponent* TurretToSet);
-		void SetTurretReference(UTankTurret* TurretToSet);
+	//void SetTurretReference(UStaticMeshComponent* TurretToSet);
+	void SetTurretReference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void Fire();
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
