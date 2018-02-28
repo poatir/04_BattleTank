@@ -17,11 +17,11 @@ private:
 	virtual void Tick(float DeltaTime) override;
 	void AimTowardCrosshair();
 	bool GetSightRayHitLocation(FVector& HitLocation) const;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrosshairXlocation = 0.5;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CrosshairYlocation = 0.3333;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000.0;//Distancia en kilometros un millon de centimetros
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
