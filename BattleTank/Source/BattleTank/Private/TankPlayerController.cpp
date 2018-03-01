@@ -12,7 +12,7 @@ ATank* ATankPlayerController::GetControlledTank() const
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	auto ControlledTank = GetControlledTank();
+	/*auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
 	{
 		//UE_LOG(LogTemp, Warning, TEXT("Tanque no poseido"));
@@ -20,7 +20,7 @@ void ATankPlayerController::BeginPlay()
 	else
 	{
 		//UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
-	}
+	}*/
 }
 void ATankPlayerController::Tick(float DeltaTime) 
 {
