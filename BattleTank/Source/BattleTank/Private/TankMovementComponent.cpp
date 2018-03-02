@@ -19,3 +19,10 @@ void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* 
 	RightTrack = RightTrackToSet;
 
 }
+
+void UTankMovementComponent::IntendTurnRight(float Throw)
+{
+	//UE_LOG(LogTemp, Warning, TEXT("Intent move Forward: %f"), Throw);
+	LeftTrack->SetThrottle(Throw);
+	RightTrack->SetThrottle(-Throw);
+}
