@@ -15,4 +15,6 @@ private:
 	virtual void Tick(float DeltaSeconds) override;
 	//ATank* GetControlledTank() const;
 	//ATank* GetPlayerTank() const;
+	//Que tan cerca puede estar l tanque
+	float AcceptanceRadius = 3000;//asumiendo que es en centimetros
 };
