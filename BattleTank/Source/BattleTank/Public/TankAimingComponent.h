@@ -4,7 +4,13 @@
 
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
-
+UENUM()
+enum class EFiringState :uint8
+{
+	Reloading,
+	Aiming,
+	Locked
+};
 class UTankBarrel;  //Forward declaration
 class UTankTurret;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -29,6 +35,9 @@ public:
 
 	//void SetTurretReference(UStaticMeshComponent* TurretToSet);
 	void SetTurretReference(UTankTurret* TurretToSet);
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "State")
+	EFiringState FiringState = EFiringState::Aiming;
 private:
 	
 	//UStaticMeshComponent* Barrel = nullptr;
