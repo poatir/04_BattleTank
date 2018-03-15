@@ -16,15 +16,15 @@ class BATTLETANK_API ATank : public APawn
 public:
 	void AimAt(FVector HitLocation);
 
-	UFUNCTION (BlueprintCallable, Category = Setup)
+	//UFUNCTION (BlueprintCallable, Category = Setup)
 	//void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
-	void SetBarrelReference(UTankBarrel* BarrelToSet);
+	//void SetBarrelReference(UTankBarrel* BarrelToSet);
 
-	UFUNCTION(BlueprintCallable, Category = Setup)
+	//UFUNCTION(BlueprintCallable, Category = Setup)
 	//void SetTurretReference(UStaticMeshComponent* TurretToSet);
-	void SetTurretReference(UTankTurret* TurretToSet);
+	//void SetTurretReference(UTankTurret* TurretToSet);
 
-	UFUNCTION(BlueprintCallable, Category = Setup)
+	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void Fire();
 
 protected:
@@ -37,24 +37,24 @@ private:
 	ATank();
 
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	//virtual void BeginPlay() override;
 	
 	// Called every frame
 	//virtual void Tick( float DeltaSeconds ) override;
 
 	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+	//virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 	//UPROPERTY(EditAnywhere, Category = Setup)
-	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	//UClass* ProjectileBlueprint;  genera BLOQUEO DE UE
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	//UPROPERTY(EditAnywhere, Category = Firing)
-	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000; //1000 m/s
 
-	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;
 	
 	//referecia local para spawn projectile

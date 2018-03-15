@@ -18,22 +18,22 @@ UTankAimingComponent::UTankAimingComponent()
 
 
 // Called when the game starts
-void UTankAimingComponent::BeginPlay()
+/*void UTankAimingComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
 	// ...
 	
-}
+}*/
 
 
 // Called every frame
-void UTankAimingComponent::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
+/*void UTankAimingComponent::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
 	// ...
-}
+}*/
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
@@ -68,20 +68,21 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	}
 }
 //void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
-void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
+/*void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	if (!BarrelToSet) { return; }
 	Barrel = BarrelToSet;
-}
+}*/
 //void UTankAimingComponent::SetTurretReference(UStaticMeshComponent* TurretToSet)
-void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
+/*void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 {
 	if (!TurretToSet) { return; }
 	Turret = TurretToSet;
-}
+}*/
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
+	if (!Barrel || !Turret) { return; }
 	//Obtener el Pitch Yaw & Roll que tendra el barrel
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
@@ -90,4 +91,8 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	Barrel->Elevate(DeltaRotator.Pitch);
 	Turret->Rotate(DeltaRotator.Yaw);
 }
-
+void UTankAimingComponent::Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet)
+{
+	Barrel = BarrelToSet;
+	Turret = TurretToSet;
+}
