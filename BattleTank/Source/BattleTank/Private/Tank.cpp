@@ -18,11 +18,11 @@ ATank::ATank()
 }
 
 // Called when the game starts or when spawned
-/*void ATank::BeginPlay()
+void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 	
-}*/
+}
 
 // Called every frame
 /*void ATank::Tick( float DeltaSeconds )
