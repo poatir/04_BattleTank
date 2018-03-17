@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTank.h"
+#include "TankAimingComponent.h"
 #include "Tank.h"
 #include "TankPlayerController.h"
 
@@ -21,6 +22,11 @@ void ATankPlayerController::BeginPlay()
 	{
 		//UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
 	}*/
+	auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
+	if (AimingComponent)
+	{
+		FoundAimingComponent(AimingComponent);
+	}
 }
 void ATankPlayerController::Tick(float DeltaTime) 
 {
@@ -77,4 +83,3 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	HitLocation = FVector(0);
 	return false;
 }
-

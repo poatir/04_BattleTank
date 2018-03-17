@@ -40,7 +40,7 @@ public:
 	void Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-	EFiringState FiringState = EFiringState::Aiming;
+	EFiringState FiringState = EFiringState::Locked;
 private:
 	UTankAimingComponent();
 	//UStaticMeshComponent* Barrel = nullptr;
