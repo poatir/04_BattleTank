@@ -23,7 +23,7 @@ void ATankPlayerController::BeginPlay()
 		//UE_LOG(LogTemp, Warning, TEXT("Tanque poseido: %s"), *ControlledTank->GetName());
 	}*/
 	auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
-	if (AimingComponent)
+	if (ensure(AimingComponent))
 	{
 		FoundAimingComponent(AimingComponent);
 	}
@@ -36,7 +36,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 }
 void ATankPlayerController::AimTowardCrosshair()
 {
-	if (!GetControlledTank())
+	if (!ensure(GetControlledTank()))
 	{
 		return;
 	}

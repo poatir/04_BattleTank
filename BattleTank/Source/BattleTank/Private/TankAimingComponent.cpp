@@ -39,7 +39,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	//auto OurTankName = GetOwner()->GetName();
 	//auto BarrelLocation = Barrel->GetComponentLocation();
-	if (!Barrel)
+	if (!ensure(Barrel))
 	{
 		return;
 	}
@@ -82,7 +82,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
-	if (!Barrel || !Turret) { return; }
+	if (ensure(Barrel) || ensure(Turret)) { return; }
 	//Obtener el Pitch Yaw & Roll que tendra el barrel
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
