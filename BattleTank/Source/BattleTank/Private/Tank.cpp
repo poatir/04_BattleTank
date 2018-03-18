@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTank.h"
-#include "TankBarrel.h"
-#include "Projectile.h"
+//#include "TankBarrel.h"
+//#include "Projectile.h"
 //#include "TankAimingComponent.h"
 //#include "TankMovementComponent.h"
 #include "Tank.h"
@@ -18,11 +18,11 @@ ATank::ATank()
 }
 
 // Called when the game starts or when spawned
-void ATank::BeginPlay()
+/*void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 	//TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
-}
+}*/
 
 // Called every frame
 /*void ATank::Tick( float DeltaSeconds )
@@ -54,7 +54,7 @@ void ATank::SetTurretReference(UTankTurret* TurretToSet)
 {
 	TankAimingComponent->SetTurretReference(TurretToSet);
 }*/
-void ATank::Fire()
+/*void ATank::Fire()
 {
 	if (!ensure(Barrel)) { return; }
 	//auto Time = GetWorld()->GetTimeSeconds();
@@ -67,4 +67,4 @@ void ATank::Fire()
 		//Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 	}
-}
+}*/

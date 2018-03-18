@@ -37,6 +37,7 @@ void ATankAIController::Tick(float DeltaSeconds)
 	//TODO Corregir disparo
 	//ControlledTank->Fire();
 	//}
+	AimingComponent->Fire();
 }
 /*ATank* ATankAIController::GetControlledTank() const
 {
