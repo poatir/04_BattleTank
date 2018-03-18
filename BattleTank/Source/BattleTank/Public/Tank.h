@@ -6,7 +6,7 @@
 #include "Tank.generated.h"
 //Forward declarations
 class UTankBarrel;
-class UTankAimingComponent;
+//class UTankAimingComponent;
 //class UTankMovementComponent;
 class AProjectile;
 UCLASS()
@@ -14,7 +14,7 @@ class BATTLETANK_API ATank : public APawn
 {
 	GENERATED_BODY()
 public:
-	void AimAt(FVector HitLocation);
+	//void AimAt(FVector HitLocation);
 
 	//UFUNCTION (BlueprintCallable, Category = Setup)
 	//void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
@@ -27,9 +27,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void Fire();
 
-protected:
+/*protected:
 	UPROPERTY(BlueprintReadOnly)
-	UTankAimingComponent* TankAimingComponent = nullptr;
+	UTankAimingComponent* TankAimingComponent = nullptr;*/
 	/*UPROPERTY(BlueprintReadOnly)
 	UTankMovementComponent* TankMovementComponent = nullptr;*/
 private:
@@ -51,8 +51,8 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	//UPROPERTY(EditAnywhere, Category = Firing)
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float LaunchSpeed = 4000; //1000 m/s
+	/*UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float LaunchSpeed = 4000; //1000 m/s*/
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;

@@ -3,7 +3,7 @@
 #include "BattleTank.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
-#include "TankAimingComponent.h"
+//#include "TankAimingComponent.h"
 //#include "TankMovementComponent.h"
 #include "Tank.h"
 
@@ -21,7 +21,7 @@ ATank::ATank()
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
-	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
+	//TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 // Called every frame
@@ -38,11 +38,11 @@ void ATank::BeginPlay()
 
 }*/
 
-void ATank::AimAt(FVector HitLocation)
+/*void ATank::AimAt(FVector HitLocation)
 {
 	if (!ensure(TankAimingComponent)) { return; }
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
-}
+}*/
 //void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
 /*void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
@@ -64,7 +64,7 @@ void ATank::Fire()
 	if (isReloaded)
 	{
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("Projectile")), Barrel->GetSocketRotation(FName("Projectile")));
-		Projectile->LaunchProjectile(LaunchSpeed);
+		//Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 	}
 }
