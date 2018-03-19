@@ -1,11 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
-
 #include "AIController.h"
 #include "TankAIController.generated.h"
-
-//class ATank;
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
 {
@@ -13,8 +8,5 @@ class BATTLETANK_API ATankAIController : public AAIController
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds) override;
-	//ATank* GetControlledTank() const;
-	//ATank* GetPlayerTank() const;
-	//Que tan cerca puede estar l tanque
 	float AcceptanceRadius = 3000;//asumiendo que es en centimetros
 };
