@@ -19,3 +19,11 @@ void UTankTrack::TickComponent(float DeltaTime, enum ELevelTick TickType, FActor
 	auto CorrectionForce = (TankRoot->GetMass() * CorrectionAcceleration) / 2;
 	TankRoot->AddForce(CorrectionForce);
 }
+void UTankTrack::BeginPlay()
+{
+	OnComponentHit.AddDynamic(this, &UTankTrack::OnHit);
+}
+void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	UE_LOG(LogTemp,Warning,TEXT("Hit Hit hit"));
+}
